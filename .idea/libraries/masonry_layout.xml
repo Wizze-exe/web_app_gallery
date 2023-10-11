@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="masonry-layout" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_unpkg.com_masonry-layout@4_dist_masonry.pkgd.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_unpkg.com_masonry-layout@4_dist_masonry.pkgd.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

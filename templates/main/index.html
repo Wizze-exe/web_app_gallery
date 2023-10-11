@@ -1,0 +1,27 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    Ultimate Web Gallery
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex justify-content-center h1">
+        <p class="h1">Галерея</p>
+    </div>
+    <div class="container">
+        <div class="grid-sizer"></div>
+        <div class="gutter-sizer"></div>
+        {% for el in arts %}
+        <a href="#" class="item text-decoration-none">
+            <img src="{{ el.art.url }}" alt="art" width="350px">
+            <div class="card1">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.description }}</p>
+                <p>{{ el.price }}</p>
+                <button class="btn">Add to cart</button>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}
+
