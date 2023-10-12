@@ -1,9 +1,30 @@
 {% extends 'main/layout.html' %}
 
 {% block title %}
-    Art
+    Add new art to gallery
 {% endblock %}
 
 {% block content %}
-
+    <div class="position-absolute top-50 start-50 translate-middle form-login">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="nameField" class="form-label">Name</label>
+                <input class="form-control" id="nameField" placeholder="{{ artForm.title }}
+            </div>
+            <div class="mb-3">
+                <label for="authorField" class="form-label">Author</label>
+                <input class="form-control" id="authorField" placeholder="{{ artForm.description }}
+            </div>
+            <div class="mb-3">
+                <label for="priceField" class="form-label">Price</label>
+                <input class="form-control" id="priceField" placeholder="{{ artForm.price }}
+            </div>
+            <div class="mb-3">
+                {{ artForm.art }}
+            </div>
+            <span>{{ error }}</span>
+            <button class="btn" type="submit">Create</button>
+        </form>
+    </div>
 {% endblock %}

@@ -8,6 +8,11 @@
     <div class="d-flex justify-content-center h1">
         <p class="h1">Галерея</p>
     </div>
+    {% if user.is_authenticated %}
+        <div class="d-flex justify-content-center">
+            <a class="btn another" href="{% url 'art' %}">+</a>
+        </div>
+    {% endif %}
     <div class="container">
         <div class="grid-sizer"></div>
         <div class="gutter-sizer"></div>
@@ -17,8 +22,10 @@
             <div class="card1">
                 <h3>{{ el.title }}</h3>
                 <p>{{ el.description }}</p>
-                <p>{{ el.price }}</p>
-                <button class="btn">Add to cart</button>
+                <div class="d-flex justify-content-between">
+                    <button class="btn">Add to cart</button>
+                    <p class="">{{ el.price }} $</p>
+                </div>
             </div>
         </a>
         {% endfor %}

@@ -1,0 +1,39 @@
+{% extends "main/layout.html" %}
+
+{% block content %}
+<div class="position-absolute top-50 start-50 translate-middle form-login">
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p>Your account doesn't have access to this page. To proceed,
+                please login with an account that has access.</p>
+        {% else %}
+            <p>Please login to see this page.</p>
+        {% endif %}
+    {% endif %}
+
+    <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label for="usernameField" class="form-label">Username</label>
+        <input class="form-control" id="usernameField" placeholder="{{ form.username }}
+    </div>
+
+    <div class="mb-3">
+        <label for="passwordField" class="form-label">Password</label>
+        <input type="password" class="form-control" id="passwordField" placeholder="{{ form.password }}
+    </div>
+
+    <div>
+        <input type="submit" value="login" class="btn"/>
+        <input type="hidden" name="next" value="{{ next }}" />
+    </div>
+    </form>
+
+    <p style="margin: 0" class=""><a href="{% url 'password_reset' %}">Lost password?</a></p>
+</div>
+{% endblock %}

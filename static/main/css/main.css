@@ -1,34 +1,51 @@
+:root {
+    --accent: #ded3b8;
+    --background: #202425;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    background: #130306;
-    font-family: 'Roboto', sans-serif;
+    background: var(--background);
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar {
-    background: #e5b68e;
-    color: #130306;
+    background: var(--accent);
+    color: var(--background);
 }
 
 p.h1 {
-    color: #e5b68e;
+    color: var(--accent);
     margin: 10px;
 }
 
 .btn {
-    color: #130306;
+    color: var(--background);
     border-width: 1px;
-    border-color: #130306;
+    border-color: var(--background);
     border-radius: 10px;
 }
 
 .btn:hover {
     transform: scale(110%);
     transition: all 120ms ease;
-    background: #130306;
-    color: #e5b68e;
+    background: var(--background);
+    color: var(--accent);
+}
+
+.btn.another {
+    color: var(--accent);
+    border-color: var(--accent);
+    margin: 0 0 10px 0;
+    width: 29%;
+}
+
+.btn.another:hover {
+    background: var(--accent);
+    color: var(--background);
 }
 
 .container {
@@ -38,14 +55,14 @@ p.h1 {
 }
 
 a.item {
-    background: #e5b68e;
+    background: var(--accent);
     border-radius: 10px;
     margin: 0 auto 1em auto;
     overflow: hidden;
     z-index: 1;
     text-decoration: none;
     transition: all 120ms ease;
-    color: #130306;
+    color: var(--background);
 }
 
 .card1 {
@@ -94,4 +111,25 @@ a.item img {
     .grid-sizer, .item {
         width: 90%;
     }
+}
+
+div.form-login {
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--accent)
+}
+
+input.form-control {
+    background-color: var(--accent);
+    border: 2px solid var(--background);
+}
+
+input.form-control:focus{
+    background-color: var(--accent);
+    border: 2px solid var(--background);
+    outline: none;
+}
+
+input.form-control::placeholder {
+    color: transparent;
 }
