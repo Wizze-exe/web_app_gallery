@@ -2,7 +2,7 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{bootstrap, docs, jquery, masonry, masonry-layout}" />
-    <file url="PROJECT" libraries="{jquery, masonry-layout}" />
+    <file url="PROJECT" libraries="{masonry-layout}" />
     <excludedPredefinedLibrary name="HTML" />
   </component>
 </project>
